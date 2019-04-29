@@ -1,3 +1,4 @@
+import { Task, TaskStatus } from './task';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'todo';
+  // title = 'todo';
+  task: Task = {
+    name: 'Learn Angular',
+    status: TaskStatus.Doing,
+    deadLine: new Date('2019-05-02')
+  };
 }
+
