@@ -1,9 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-   {{ task.name }}
-  </h1>
   <div>
-    {{ task.status }} : {{ task.deadLine | date:"dd/MM/yyyy" }}
+    <ul>
+      <li *ngFor="let task of tasks"> {{ task.name }}</li>
+    </ul>
+    <div>
+      <h1>
+        {{ currentTask.name }}
+      </h1>
+      {{ currentTask.status }} : {{ currentTask.deadLine | date:"dd/MM/yyyy" }}
+    </div>
   </div>
 </div>

@@ -8,11 +8,30 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  // title = 'todo';
-  task: Task = {
-    name: 'Learn Angular',
-    status: TaskStatus.Doing,
-    deadLine: new Date('2019-05-02')
-  };
+
+  tasks: Array<Task> = [
+    {
+      name: 'Bien maîtriser Angular',
+      status: TaskStatus.Doing,
+      deadLine: new Date('2019-05-31')
+    },
+    {
+      name: 'Apprendre React',
+      status: TaskStatus.Done,
+      deadLine: new Date('2019-07-11')
+    },
+    {
+      name: 'Apprendre Vue',
+      status: TaskStatus.Doing,
+      deadLine: new Date('2019-10-19')
+    },
+    {
+      name: 'Apprendre le Cobol',
+      status: TaskStatus.ToDo,
+      deadLine: new Date('1959-12-25')
+    }
+  ];
+  currentTask = this.tasks[0];
 }
+
 
