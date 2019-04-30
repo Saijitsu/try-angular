@@ -1,7 +1,7 @@
 export enum TaskStatus {
-  ToDo = 'Tomorrow, I begin',
-  Doing = 'In progress',
-  Done = 'Already done!'
+  ToDo = 'A Faire',
+  Doing = 'En cours',
+  Done = 'Fait'
 }
 
 export class Task {
@@ -9,8 +9,4 @@ export class Task {
   public status: TaskStatus;
   public deadLine: Date;
 }
-  /*// Object.assign(cible, ...sources)
-  constructor(values: object = {}) {
-    Object.assign(this, values);
-  }*/
 

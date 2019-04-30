@@ -1,0 +1,25 @@
+<div>
+  <h3>Ajouter une tâche:</h3>
+  <form (ngSubmit)="addTask()">
+    <div>
+      <label for="create[name]">Nom</label>
+      <input id="create[name]" name="name" [(ngModel)]="newTask.name">
+    </div>
+    <div>
+      <label for="create[deadline]">Echeance</label>
+      <input type="date" id="create[deadline]" name="deadline" [(ngModel)]="newTask.deadLine">
+    </div>
+    <div>
+      <label for="create[status]">Statut</label>
+      <select name="status" id="create[status]" [(ngModel)]="newTask.status">
+        <option value="Todo">A faire</option>
+        <option value="Doing">En cours</option>
+        <option value="Done">Fait</option>
+      </select>
+    </div>
+    <button class="button">Encore travailler tu dois?<img width="40px" src="../assets/yoda.jpg" alt="Yoda"></button>
+  </form>
+</div>
+<div>
+  {{ newTask | json }}
+</div>

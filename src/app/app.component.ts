@@ -37,6 +37,11 @@ export class AppComponent {
     this.currentTask = task;
   }
 
+  addTaskToList(task: Task) {
+    this.tasks.unshift(task);
+    this.currentTask = task;
+  }
+
 }
 
 
