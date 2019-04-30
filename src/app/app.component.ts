@@ -32,6 +32,11 @@ export class AppComponent {
     }
   ];
   currentTask = this.tasks[0];
+
+  setCurrentTask(task: Task) {
+    this.currentTask = task;
+  }
+
 }
 
 
