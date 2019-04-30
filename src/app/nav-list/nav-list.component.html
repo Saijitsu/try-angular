@@ -1,4 +1,5 @@
 <ul>
+  <h3>Ma liste de tâches:</h3>
   <li *ngFor="let task of taskList" (click)="select(task)"> {{ task.name }}</li>
   <!-- (click)="select(task)" indique la variable courrante, celle selectionnée, ici
     si on réecrit le template on aura pas besoin de réecrire le composant -->

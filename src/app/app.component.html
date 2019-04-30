@@ -1,4 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-nav-list [taskList]="tasks"  (taskSelected)="setCurrentTask($event)"></app-nav-list>
-<!-- taskSelected = correspond a la donnée emise / setCurrentTask($event)  -->
-<app-detail [task]="currentTask"></app-detail>
+<div class="box">
+  <app-nav-list [taskList]="tasks" (taskSelected)="setCurrentTask($event)"></app-nav-list>
+  <!-- taskSelected = correspond a la donnée emise / setCurrentTask($event)  -->
+  <app-detail [task]="currentTask"></app-detail>
+</div>

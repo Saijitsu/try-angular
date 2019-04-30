@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import './sass/_variables';
+
+html {
+  color: $textColor;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.box {
+  background-color: $box-bgcolor;
+  border: $box-border;
+  margin: 10%;
+
+  div,
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+}
