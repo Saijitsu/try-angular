@@ -1,9 +1,12 @@
 <div>
   <h3>Ajouter une tâche:</h3>
-  <form (ngSubmit)="addTask()">
+  <form (ngSubmit)="addTask(); form.reset()" #form="ngForm">
+    <!-- #form="ngForm" : variable de template -->
     <div>
       <label for="create[name]">Nom</label>
-      <input id="create[name]" name="name" [(ngModel)]="newTask.name">
+      <!-- ici create[name] va permettre d'avoir des ID uniques, grammaire HTML5 -->
+      <input id="create[name]" name="name" [(ngModel)]="newTask.name" #inputName="ngModel" required pattern="[a-zA-Z0-9_ -]*">
+      <p [hidden]="inputName.valid || inputName.untouched" class="error">Vous pouvez utiliser des lettres, chiffres ou espaces uniquement.</p>
     </div>
     <div>
       <label for="create[deadline]">Echeance</label>
@@ -17,7 +20,7 @@
         <option value="Done">Fait</option>
       </select>
     </div>
-    <button class="button">Encore travailler tu dois?<img width="40px" src="../assets/yoda.jpg" alt="Yoda"></button>
+    <button [disabled]="form.invalid" class="button"><p>Encore apprendre tu dois?</p><img width="30px" src="../assets/yoda.jpg" alt="Yoda"></button>
   </form>
 </div>
 <div>

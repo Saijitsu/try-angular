@@ -11,7 +11,7 @@ body {
 }
 
 .box {
-  background: linear-gradient($box-bgcolor, $secondaryColor);
+  background: linear-gradient($box-bgcolor 1%, $secondaryColor 50%, $invertedTextColor);
   border: $box-border;
   margin: 10%;
 
