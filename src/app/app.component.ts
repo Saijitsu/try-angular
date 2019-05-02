@@ -1,5 +1,6 @@
-import { Task, TaskStatus } from './task';
-import { Component } from '@angular/core';
+import { TaskProviderService } from './task-provider.service';
+import { Task } from './task';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,37 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  tasks: Array<Task> = [
-    {
-      name: 'Bien maîtriser Angular',
-      status: TaskStatus.Doing,
-      deadLine: new Date('2019-05-31')
-    },
-    {
-      name: 'Apprendre React',
-      status: TaskStatus.Done,
-      deadLine: new Date('2019-07-11')
-    },
-    {
-      name: 'Apprendre Vue',
-      status: TaskStatus.Doing,
-      deadLine: new Date('2019-10-19')
-    },
-    {
-      name: 'Apprendre le Cobol',
-      status: TaskStatus.ToDo,
-      deadLine: new Date('1959-12-25')
-    }
-  ];
-  currentTask = this.tasks[0];
+  tasks: Array<Task> = [];
+  currentTask: Task;
 
-  setCurrentTask(task: Task) {
+  // Le taskprovider est construit ici simplement grace au typage ici:
+  constructor(public manager: TaskProviderService) { }
+
+  ngOnInit(): void {
+    this.tasks = this.manager.tasks;
+    this.currentTask = this.tasks[0];
+  }
+  setCurrentTask(task: Task): void {
     this.currentTask = task;
   }
 
-  addTaskToList(task: Task) {
+  addTaskToList(task: Task): void {
     this.tasks.unshift(task);
     this.currentTask = task;
   }
