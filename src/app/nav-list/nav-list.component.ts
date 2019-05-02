@@ -21,7 +21,7 @@ export class NavListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.provider.getTasks().subscribe( tasks => this.taskList = tasks);
+    this.provider.getTasks().subscribe(tasks => this.taskList = tasks);
   }
 
   /*select(task: Task) {
