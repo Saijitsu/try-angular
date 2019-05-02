@@ -1,6 +1,7 @@
-import { TaskProviderService } from './task-provider.service';
+// import { TaskProviderService } from './task-provider.service';
 import { Task } from './task';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
+  /*  export class AppComponent implements OnInit {
 
   tasks: Array<Task> = [];
-  currentTask = new Task();
+   currentTask = new Task();*/
 
   // Le taskprovider est construit ici simplement grace au typage ici:
-  constructor(public manager: TaskProviderService) { }
+  /*constructor(public manager: TaskProviderService) { }
 
   ngOnInit(): void {
     this.manager.getTasks().subscribe(tasks => { // tasks de l'observable ici
@@ -32,7 +34,7 @@ export class AppComponent implements OnInit {
   addTaskToList(task: Task): void {
     this.tasks.unshift(task);
     this.currentTask = task;
-  }
+  }*/
 
 }
 

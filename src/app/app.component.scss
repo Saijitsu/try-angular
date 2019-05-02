@@ -5,6 +5,12 @@ main
   justify-content: space-around;
 }
 
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 @media (max-width: 725px) {
   main {
     flex-direction: column;

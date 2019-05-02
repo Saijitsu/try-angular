@@ -1,7 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<header>
+  <h1>Todo list</h1>
+</header>
 <main class="box">
+  <!--
   <app-nav-list [taskList]="tasks" (taskSelected)="setCurrentTask($event)"></app-nav-list>
-  <!-- taskSelected = correspond a la donnée emise / setCurrentTask($event)  -->
+  // taskSelected = correspond a la donnée emise / setCurrentTask($event)
   <app-create (taskCreated)="addTaskToList($event)"></app-create>
   <app-detail [task]="currentTask"></app-detail>
+ -->
+  <app-nav-list></app-nav-list>
+  <app-create></app-create>
+  <app-detail></app-detail>
 </main>
