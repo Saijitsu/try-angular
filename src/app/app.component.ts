@@ -11,14 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   tasks: Array<Task> = [];
-  currentTask: Task;
+  currentTask = new Task();
 
   // Le taskprovider est construit ici simplement grace au typage ici:
   constructor(public manager: TaskProviderService) { }
 
   ngOnInit(): void {
-    this.tasks = this.manager.tasks;
-    this.currentTask = this.tasks[0];
+    this.manager.getTasks().subscribe(tasks => { // tasks de l'observable ici
+      this.tasks = tasks;
+      this.currentTask = this.tasks[0];
+    });
+// On va récupérer l'observable, on applique à l'objet tasks le type Task function(tasks: Task[]): Task[]
+// on récupère tasks en asynchrone, on va mettre le currentTask à jour
+// le Subscribe souscrit à quelque chose d'asynchrone pour mettre à jour de la donnée syncrhone
   }
   setCurrentTask(task: Task): void {
     this.currentTask = task;

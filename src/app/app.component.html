@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="box">
+<main class="box">
   <app-nav-list [taskList]="tasks" (taskSelected)="setCurrentTask($event)"></app-nav-list>
   <!-- taskSelected = correspond a la donnée emise / setCurrentTask($event)  -->
   <app-create (taskCreated)="addTaskToList($event)"></app-create>
   <app-detail [task]="currentTask"></app-detail>
-</div>
+</main>

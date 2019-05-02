@@ -1,5 +1,7 @@
-import { TaskStatus, Task} from './task';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Task } from './task';
 
 @Injectable({
   providedIn: 'root'
@@ -7,26 +9,9 @@ import { Injectable } from '@angular/core';
 
 export class TaskProviderService {
 
-  tasks: Array<Task> = [
-    {
-      name: 'Bien maîtriser Angular',
-      status: TaskStatus.Doing,
-      deadLine: new Date('2019-05-31')
-    },
-    {
-      name: 'Apprendre React',
-      status: TaskStatus.Done,
-      deadLine: new Date('2019-07-11')
-    },
-    {
-      name: 'Apprendre Vue',
-      status: TaskStatus.Doing,
-      deadLine: new Date('2019-10-19')
-    },
-    {
-      name: 'Apprendre le Cobol',
-      status: TaskStatus.ToDo,
-      deadLine: new Date('1959-12-25')
-    }
-  ];
+  constructor(private http: HttpClient) { }
+
+  getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>('/assets/tasks.json'); // on va typer get avec le retour que l'on veut.
+  }
 }
