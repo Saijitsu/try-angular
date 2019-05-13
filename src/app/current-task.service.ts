@@ -10,8 +10,8 @@ export class CurrentTaskService {
 
   taskSubject = new Subject<Task>();
 
-  constructor(private provider: TaskProviderService) {
-    this.provider.getTasks().subscribe(tasks => this.taskSubject.next(tasks[0]));
+  constructor(provider: TaskProviderService) {
+    provider.getTasks().subscribe(tasks => this.taskSubject.next(tasks[0]));
   }
 
   getCurrentTask(): Observable<Task> {
