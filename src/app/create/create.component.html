@@ -17,9 +17,9 @@
     <div>
       <label for="create[status]">Statut</label>
       <select name="status" id="create[status]" [(ngModel)]="newTask.status" required>
-        <option value="Todo">A faire</option>
-        <option value="Doing">En cours</option>
-        <option value="Done">Fait</option>
+        <option value="0">A faire</option>
+        <option value="1">En cours</option>
+        <option value="2">Fait</option>
       </select>
     </div>
     <button [disabled]="form.invalid" class="button">

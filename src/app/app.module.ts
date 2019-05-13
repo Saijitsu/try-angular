@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { CreateComponent } from './create/create.component';
+import { ResumeComponent } from './resume/resume.component';
 
 /*import { Task } from './task';
 
@@ -23,7 +24,8 @@ const taskFactory = () => {
     AppComponent,
     NavListComponent,
     DetailComponent,
-    CreateComponent
+    CreateComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,

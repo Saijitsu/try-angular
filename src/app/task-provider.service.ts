@@ -17,6 +17,7 @@ export class TaskProviderService {
     this.http.get<Task[]>('/assets/tasks.json').subscribe(tasks => { 
       this.tasks = tasks;
       this.tasksSubject.next(this.tasks);
+      console.log('test', this.tasks); // need to be clear
     });
   }
 
@@ -31,5 +32,6 @@ export class TaskProviderService {
     this.tasks.unshift(newTask);
     // Notifie tout les abonnés avec la nouvelle version de la liste
     this.tasksSubject.next(this.tasks);
+    console.log('test', this.tasks); // need to be clear
   }
 }
