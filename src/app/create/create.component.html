@@ -12,11 +12,11 @@
     </div>
     <div>
       <label for="create[deadline]">Echeance</label>
-      <input type="date" id="create[deadline]" name="deadline" [(ngModel)]="newTask.deadLine">
+      <input type="date" id="create[deadline]" name="deadline" [(ngModel)]="newTask.deadLine" required>
     </div>
     <div>
       <label for="create[status]">Statut</label>
-      <select name="status" id="create[status]" [(ngModel)]="newTask.status">
+      <select name="status" id="create[status]" [(ngModel)]="newTask.status" required>
         <option value="Todo">A faire</option>
         <option value="Doing">En cours</option>
         <option value="Done">Fait</option>
