@@ -9,6 +9,7 @@ import { Task } from './task';
 
 export class TaskProviderService {
 
+  nextId:number;
   tasks = new Array<Task>(); // conserve la liste des tâches
   tasksSubject = new ReplaySubject<Task[]>(1); // le sujet peut être observée et donner un new état.
   // si des observateurs, ils ici la dernière tâche (check si AsyncSubject pas préférable).
@@ -16,6 +17,10 @@ export class TaskProviderService {
   constructor(private http: HttpClient) {  // ici dès l'instant ou implanté le service on y a accès.
     this.http.get<Task[]>('/assets/tasks.json').subscribe(tasks => {
       this.tasks = tasks;
+      this.nextId= this.tasks.reduce(
+        (maxId: number, task: Task) => Math.max(maxId, task.id),
+        0
+      ) + 1;
       this.tasksSubject.next(this.tasks);
       console.log('test', this.tasks); // need to be clear
     });
@@ -29,10 +34,7 @@ export class TaskProviderService {
 
   add(newTask: Task) {
     // On va creer un Id pour les nouveaux élément de la liste
-    newTask.id = this.tasks.reduce(
-      (maxId: number, task: Task) => Math.max(maxId, task.id),
-      0
-    ) + 1;
+    newTask.id = this.nextId++
 
     // Ajoute la tâche en début de liste
     this.tasks.unshift(newTask);
