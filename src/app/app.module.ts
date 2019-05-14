@@ -23,6 +23,7 @@ const taskFactory = () => {
 const appRoutes: Routes = [
   {path: 'todolist', component: NavListComponent },
   {path: 'create', component: CreateComponent },
+  {path: 'task/:id', component: DetailComponent },
   { path: '', redirectTo: 'todolist', pathMatch: 'full' }
 ];
 
