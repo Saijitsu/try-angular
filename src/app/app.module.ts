@@ -8,6 +8,7 @@ import { NavListComponent } from './nav-list/nav-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { CreateComponent } from './create/create.component';
 import { ResumeComponent } from './resume/resume.component';
+import { RouterModule, Routes } from '@angular/router';
 
 /*import { Task } from './task';
 
@@ -18,6 +19,12 @@ const taskFactory = () => {
   }
   return new Task();
 };*/
+
+const appRoutes: Routes = [
+  {path: 'todolist', component: NavListComponent },
+  {path: 'create', component: CreateComponent },
+  { path: '', redirectTo: 'todolist', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
@@ -30,7 +37,8 @@ const taskFactory = () => {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     TaskProviderService

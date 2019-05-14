@@ -2,6 +2,12 @@
 <header>
   <h1>Todo list</h1>
 </header>
+<nav>
+  <ul>
+    <li><a routerLink="todolist">Liste</a></li>
+    <li><a routerLink="create">Création</a></li>
+  </ul>
+</nav>
 <main class="box">
   <!--
   <app-nav-list [taskList]="tasks" (taskSelected)="setCurrentTask($event)"></app-nav-list>
@@ -9,8 +15,10 @@
   <app-create (taskCreated)="addTaskToList($event)"></app-create>
   <app-detail [task]="currentTask"></app-detail>
  -->
-  <app-nav-list></app-nav-list>
+ <router-outlet></router-outlet>
+
+  <!-- <app-nav-list></app-nav-list>
   <app-create></app-create>
   <app-resume></app-resume>
-  <app-detail></app-detail>
+  <app-detail></app-detail> -->
 </main>

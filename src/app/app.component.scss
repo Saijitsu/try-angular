@@ -1,5 +1,6 @@
-main
-{
+@import '../sass/variables';
+
+main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -14,5 +15,24 @@ header{
 @media (max-width: 725px) {
   main {
     flex-direction: column;
+  }
+}
+
+nav {
+  ul{
+    list-style-type: none;
+    padding: 0 4ch;
+    display: flex;
+    background: $secondaryColor;
+
+    a{
+      text-decoration: none;
+      display: block;
+      padding: .5em;
+
+      &hover{
+        background: orange;
+      }
+    }
   }
 }
